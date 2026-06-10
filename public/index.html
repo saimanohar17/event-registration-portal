@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Registration Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <header class="hero">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        Aurora Events
+      </div>
+      <h1>Event Registration Portal</h1>
+      <p>
+        Lock in your seat for our 2026 programs. Pick your experience, share a few details,
+        and we will take care of the rest within 24 hours.
+      </p>
+      <div class="hero-meta">
+        <span>Season: March – June 2026</span>
+        <span>Locations: Bengaluru · Hyderabad · Remote</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="info-card">
+        <h2>What you get</h2>
+        <ul class="feature-list">
+          <li>Access to curated sessions and expert-led tracks.</li>
+          <li>Private community lounge and post-event recordings.</li>
+          <li>Priority concierge for VIP and Student tickets.</li>
+        </ul>
+
+        <div class="schedule">
+          <h3>Upcoming highlights</h3>
+          <div class="schedule-item">
+            <span>Mar 29</span>
+            <div>
+              <strong>Design Lab Workshop</strong>
+              <p>Live product thinking and portfolio critiques.</p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span>Apr 12</span>
+            <div>
+              <strong>Tech Summit 2026</strong>
+              <p>Systems, AI, and scale stories from industry leaders.</p>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span>May 03</span>
+            <div>
+              <strong>Startup Pitch Night</strong>
+              <p>Investor-ready feedback and mentorship pods.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="form-header">
+          <div>
+            <h2>Register now</h2>
+            <p>Fields marked with * are required.</p>
+          </div>
+          <div class="badge">Limited seats</div>
+        </div>
+
+        <form id="registrationForm" novalidate>
+          <div class="grid">
+            <div class="field" data-field="fullName">
+              <label for="fullName">Full name *</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Riya Sharma" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="email">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="riya@email.com" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="phone">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="organization">
+              <label for="organization">Organization</label>
+              <input id="organization" name="organization" type="text" placeholder="Studio North" />
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="event">
+              <label for="event">Choose event *</label>
+              <select id="event" name="event" required>
+                <option value="select">Select an event</option>
+                <option value="Design Lab Workshop">Design Lab Workshop</option>
+                <option value="Tech Summit 2026">Tech Summit 2026</option>
+                <option value="Startup Pitch Night">Startup Pitch Night</option>
+                <option value="Community Meetup">Community Meetup</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="eventDate">
+              <label for="eventDate">Preferred date *</label>
+              <input id="eventDate" name="eventDate" type="date" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="ticketType">
+              <label for="ticketType">Ticket type *</label>
+              <select id="ticketType" name="ticketType" required>
+                <option value="select">Select ticket</option>
+                <option value="General">General</option>
+                <option value="VIP">VIP</option>
+                <option value="Student">Student</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field" data-field="attendees">
+              <label for="attendees">Attendees *</label>
+              <input id="attendees" name="attendees" type="number" min="1" max="10" value="1" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+          </div>
+
+          <div class="field" data-field="dietary">
+            <label for="dietary">Dietary preferences</label>
+            <input id="dietary" name="dietary" type="text" placeholder="Vegan, nut-free, etc." />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <div class="field" data-field="notes">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any accessibility requests or questions?"></textarea>
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <label class="check">
+            <input id="updatesOptIn" name="updatesOptIn" type="checkbox" />
+            <span>Send me event updates and speaker drops.</span>
+          </label>
+
+          <div class="field" data-field="termsAccepted">
+            <label class="check">
+              <input id="termsAccepted" name="termsAccepted" type="checkbox" required />
+              <span>I agree to the code of conduct *</span>
+            </label>
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="primary">Submit registration</button>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
